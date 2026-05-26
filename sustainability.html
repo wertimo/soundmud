@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SoundMud's sustainability commitments — CO₂ transparency, tree planting, and circular knowledge design. Built differently from day one.">
+  <meta name="theme-color" content="#1a3d2b">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Sustainability — SoundMud">
+  <meta property="og:description" content="Sustainability isn't an add-on. It's a design principle.">
+
+  <title>Sustainability — SoundMud</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .visually-hidden {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ─────────────────────────────────────── -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="SoundMud home">
+        <span class="nav__logo-text">SOUNDMUD</span>
+      </a>
+
+      <button class="nav__toggle" id="navToggle"
+              aria-label="Open navigation menu" aria-expanded="false"
+              aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__links" id="navLinks" role="list">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#episodes">Episodes</a></li>
+        <li><a href="sustainability.html" class="active">Sustainability</a></li>
+        <li><a href="index.html#newsletter">Newsletter</a></li>
+        <li><a href="index.html#listen" class="btn btn--green btn--sm">Listen Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── HERO ───────────────────────────────────────────── -->
+  <section class="sustain-hero" aria-labelledby="sustain-hero-heading">
+    <div class="container">
+      <span class="label label--light">Built differently</span>
+      <h1 id="sustain-hero-heading">
+        Sustainability isn't an add-on.<br>
+        It's a design principle.
+      </h1>
+      <p class="hero-sub">
+        Most podcasts don't think about their environmental footprint.
+        We do — from the London spaces we record in, to the partners we
+        work with, to the CO&#8322; our listeners generate by streaming us.
+        Not performance. Proof.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── THREE COMMITMENTS ──────────────────────────────── -->
+  <section class="section" aria-labelledby="commitments-heading">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="label">Our commitments</span>
+        <h2 id="commitments-heading">Three things we're actively building around</h2>
+        <p>
+          Not future promises — design constraints we're working within from day one.
+        </p>
+      </div>
+
+      <div class="commitments">
+
+        <div class="commitment reveal">
+          <div class="commitment__number" aria-hidden="true">01</div>
+          <h3>Build sustainability in visibly</h3>
+          <p>
+            A tree planting scheme tied to subscriber milestones. CO&#8322; transparency
+            built into the website. Sustainability-aligned partners only. Competitors
+            aren't doing this — that's the opportunity.
+          </p>
+          <span class="status status--in-progress">In progress</span>
+        </div>
+
+        <div class="commitment reveal" style="transition-delay: 0.1s">
+          <div class="commitment__number" aria-hidden="true">02</div>
+          <h3>Design for circularity</h3>
+          <p>
+            Knowledge doesn't have to be one-directional. Listener voices shape future
+            content. Repeat guests build on earlier conversations. Spaces and materials —
+            cafes, libraries, museums across London — chosen with intention.
+          </p>
+          <span class="status status--active">Active</span>
+        </div>
+
+        <div class="commitment reveal" style="transition-delay: 0.2s">
+          <div class="commitment__number" aria-hidden="true">03</div>
+          <h3>Grow with purpose, not just speed</h3>
+          <p>
+            Local UK partners. Sustainability-aligned brands. The right 1,000 founders
+            matters more than 10,000 wrong ones. Our growth strategy reflects that —
+            audiences that matter more than numbers that look good.
+          </p>
+          <span class="status status--active">Active</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CARBON CALCULATOR ──────────────────────────────── -->
+  <section class="section section--alt" id="calculator" aria-labelledby="calc-heading">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="label">AI Carbon Calculator</span>
+        <h2 id="calc-heading">What's your listening footprint?</h2>
+        <p>
+          Streaming audio has a carbon footprint. It's small — but it's real.
+          Adjust the sliders to see your estimated annual CO&#8322; from podcast streaming.
+        </p>
+      </div>
+
+      <div class="calculator reveal" role="region" aria-label="Interactive carbon footprint calculator">
+        <div class="calculator__header">
+          <h2>Your Listening Footprint</h2>
+          <p>Estimates based on peer-reviewed research from The Shift Project and the Carbon Trust.</p>
+        </div>
+
+        <div class="calculator__body">
+          <!-- Inputs -->
+          <div class="calculator__inputs">
+
+            <div class="calc-field">
+              <div class="calc-value-row">
+                <label for="calcEpisodes">Episodes per week</label>
+                <span class="calc-value" id="calcEpisodesVal" aria-live="polite">3 ep/wk</span>
+              </div>
+              <input type="range" id="calcEpisodes"
+                     min="1" max="20" value="3" step="1"
+                     aria-label="Episodes per week" aria-valuemin="1" aria-valuemax="20">
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-value-row">
+                <label for="calcDuration">Average episode length</label>
+                <span class="calc-value" id="calcDurationVal" aria-live="polite">45 min</span>
+              </div>
+              <input type="range" id="calcDuration"
+                     min="10" max="120" value="45" step="5"
+                     aria-label="Average episode length in minutes" aria-valuemin="10" aria-valuemax="120">
+            </div>
+
+            <div class="calc-field">
+              <label for="calcDevice">Primary listening device</label>
+              <select id="calcDevice" class="calc-select" aria-label="Select your primary listening device">
+                <option value="mobilewifi">Phone (WiFi)</option>
+                <option value="mobile4g">Phone (4G / 5G)</option>
+                <option value="desktop">Computer / Laptop</option>
+                <option value="smart">Smart Speaker</option>
+              </select>
+            </div>
+
+            <div class="calc-note" role="note">
+              Figures use mid-range estimates from The Shift Project (2019) and Carbon Trust (2021),
+              adjusted for UK grid intensity (~233&nbsp;gCO&#8322;/kWh, IEA 2024). Actual values vary
+              by network, device, and listening context.
+            </div>
+
+          </div>
+
+          <!-- Results -->
+          <div class="calculator__results" aria-live="polite" aria-atomic="true">
+
+            <div class="result-card">
+              <p class="result-card__label">Annual CO&#8322; from your listening</p>
+              <div class="result-card__value" id="resultCO2">—</div>
+              <p class="result-card__sub"  id="resultCO2Sub">calculating...</p>
+            </div>
+
+            <div class="result-card">
+              <p class="result-card__label">Trees to fully offset it</p>
+              <div class="result-card__value" id="resultTrees">—</div>
+              <p class="result-card__sub"  id="resultTreesSub">per year (Forestry Commission UK)</p>
+            </div>
+
+            <div class="result-card">
+              <p class="result-card__label">Equivalent car journey</p>
+              <div class="result-card__value" id="resultKm">—</div>
+              <p class="result-card__sub"  id="resultKmSub">UK average petrol car</p>
+            </div>
+
+            <div class="result-card result-card--offset">
+              <p class="result-card__label">SoundMud's offset pledge</p>
+              <div class="result-card__value">&#x2713; Offset</div>
+              <p class="result-card__sub">
+                Production CO&#8322; tracked and offset. Tree planting scheme launching soon
+                — tied to subscriber milestones.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TREE PLANTING ──────────────────────────────────── -->
+  <section class="section" id="trees" aria-labelledby="trees-heading">
+    <div class="container">
+      <div class="tree-section">
+
+        <div class="tree-section__content reveal">
+          <span class="label">Tree Planting</span>
+          <h2 id="trees-heading">One tree for every 100 subscribers</h2>
+          <p>
+            We're researching the right scheme — one that's credible, visible, and makes
+            a measurable difference. UK-native species. Transparent reporting.
+            No greenwashing.
+          </p>
+          <p>
+            When we find the right partner, every subscriber milestone plants trees.
+            You'll be able to see exactly where they're planted and what species.
+            Nation- or county-dependent planting based on where listeners are concentrated.
+          </p>
+
+          <div class="tree-progress" aria-label="Subscriber progress towards first tree planting">
+            <div class="tree-progress__bar">
+              <!-- Width is set by JS once subscriber count is known; starts at 0% -->
+              <div class="tree-progress__fill" style="width: 0%"
+                   role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+              </div>
+            </div>
+            <div class="tree-progress__labels">
+              <span>0 subscribers</span>
+              <span>First tree at 100</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 2rem;">
+            <a href="index.html#newsletter" class="btn btn--green">
+              Join the journey &#8594;
+            </a>
+          </div>
+        </div>
+
+        <div class="tree-section__visual" aria-hidden="true">
+          <svg viewBox="0 0 160 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Tree layers -->
+            <ellipse cx="80" cy="120" rx="60" ry="72" fill="#d8f3dc" opacity="0.55"/>
+            <ellipse cx="80" cy="106" rx="50" ry="62" fill="#b7e4c7" opacity="0.55"/>
+            <ellipse cx="80" cy="92"  rx="40" ry="50" fill="#74c69d" opacity="0.65"/>
+            <ellipse cx="80" cy="76"  rx="30" ry="38" fill="#52b788" opacity="0.8"/>
+            <ellipse cx="80" cy="60"  rx="22" ry="28" fill="#40916c"/>
+            <ellipse cx="80" cy="46"  rx="14" ry="18" fill="#2d6a4f"/>
+            <!-- Trunk -->
+            <rect x="71" y="152" width="18" height="56" rx="9" fill="#40916c"/>
+            <!-- Roots -->
+            <path d="M80 208 Q62 218 50 215" stroke="#40916c" stroke-width="4"
+                  stroke-linecap="round" fill="none"/>
+            <path d="M80 208 Q98 218 110 215" stroke="#40916c" stroke-width="4"
+                  stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DECISION FILTER ────────────────────────────────── -->
+  <section class="section section--green" aria-labelledby="filter-heading">
+    <div class="container container--narrow">
+      <div style="text-align: center;" class="reveal">
+        <span class="label label--light">The Filter</span>
+        <h2 id="filter-heading" style="color: white; margin-bottom: 1.5rem;">
+          Every decision runs through one question
+        </h2>
+        <blockquote style="font-family: var(--f-display); font-size: clamp(1.2rem,2.5vw,1.6rem);
+                           font-style: italic; color: var(--c-green-300); line-height: 1.65;
+                           max-width: 52ch; margin: 0 auto 2rem; border: none; padding: 0;">
+          "Does this move SoundMud forward, and does it leave something better than I found it?"
+        </blockquote>
+        <p style="color: rgba(255,255,255,0.6); max-width: 46ch; margin: 0 auto 2.5rem;">
+          <strong style="color: var(--c-green-300);">Forward</strong> = closer to the founder community we're building for. &nbsp;
+          <strong style="color: var(--c-green-300);">Better</strong> = circular, intentional, and true to why we're doing this.
+        </p>
+        <a href="index.html" class="btn btn--outline-light">Back to the podcast &#8594;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <span class="footer__logo" aria-label="SoundMud">SOUNDMUD</span>
+          <p class="footer__tagline">Think further. Build better.</p>
+        </div>
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <a href="index.html#about">About</a>
+          <a href="index.html#episodes">Episodes</a>
+          <a href="sustainability.html">Sustainability</a>
+          <a href="index.html#newsletter">Newsletter</a>
+        </nav>
+        <div class="footer__social" aria-label="Social links">
+          <a href="#" aria-label="SoundMud on X (Twitter)" rel="noopener">X</a>
+          <a href="#" aria-label="SoundMud on LinkedIn" rel="noopener">LinkedIn</a>
+          <a href="#" aria-label="SoundMud on Instagram" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 SoundMud. Built with intention.</p>
+        <a href="sustainability.html" class="footer__sustain-badge">
+          &#127807; Carbon-conscious podcast
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

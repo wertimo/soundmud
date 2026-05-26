@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SoundMud — Real conversations with founders one or two steps ahead. The honest, practical podcast about the workstreams, automation, and AI decisions that actually make a business work.">
+  <meta name="theme-color" content="#1a3d2b">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="SoundMud — Real Conversations for Founders">
+  <meta property="og:description" content="Not the success stories. The workstreams, the automation, the unglamorous stuff that actually makes a business work.">
+  <meta property="og:site_name"   content="SoundMud">
+
+  <title>SoundMud — Real Conversations for Founders</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ── NAVIGATION ─────────────────────────────────────── -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="SoundMud home">
+        <span class="nav__logo-text">SOUNDMUD</span>
+      </a>
+
+      <button class="nav__toggle" id="navToggle"
+              aria-label="Open navigation menu" aria-expanded="false"
+              aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__links" id="navLinks" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#episodes">Episodes</a></li>
+        <li><a href="sustainability.html">Sustainability</a></li>
+        <li><a href="#newsletter">Newsletter</a></li>
+        <li><a href="#listen" class="btn btn--green btn--sm">Listen Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── HERO ───────────────────────────────────────────── -->
+  <section class="hero" id="home" aria-labelledby="hero-headline">
+    <div class="hero__bg" aria-hidden="true"></div>
+
+    <div class="hero__inner">
+      <!-- Content -->
+      <div class="hero__content">
+        <p class="hero__kicker">A podcast for UK founders</p>
+        <h1 class="hero__headline" id="hero-headline">
+          Real conversations.<br>One step ahead.
+        </h1>
+        <p class="hero__sub">
+          Not the success stories from people 10 steps ahead. Honest, practical
+          conversations with founders who just figured out the thing you're stuck on
+          right now — the workstreams, the automation, the AI decisions.
+        </p>
+        <div class="hero__actions">
+          <a href="#listen" class="btn btn--green btn--lg">Listen Now</a>
+          <a href="#newsletter" class="btn btn--outline btn--lg">Stay Updated</a>
+        </div>
+        <p class="hero__goal">
+          Goal: <strong>1,000 founders</strong> building alongside us.
+        </p>
+      </div>
+
+      <!-- Visual -->
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hero__vis-wrap">
+          <div class="hero__vis-circle">
+            <div class="hero__vis-mic">
+              <!-- Microphone SVG -->
+              <svg viewBox="0 0 90 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="22" y="6"  width="46" height="70" rx="23" fill="#2d6a4f" opacity="0.18"/>
+                <rect x="28" y="12" width="34" height="58" rx="17" fill="#2d6a4f" opacity="0.32"/>
+                <rect x="35" y="20" width="20" height="42" rx="10" fill="#2d6a4f"/>
+                <!-- Grille lines -->
+                <line x1="35" y1="30" x2="55" y2="30" stroke="#d8f3dc" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="35" y1="38" x2="55" y2="38" stroke="#d8f3dc" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+                <line x1="35" y1="46" x2="55" y2="46" stroke="#d8f3dc" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+                <!-- Stand arc -->
+                <path d="M12 64 C12 92 78 92 78 64" stroke="#2d6a4f" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+                <!-- Pole -->
+                <line x1="45" y1="92" x2="45" y2="115" stroke="#2d6a4f" stroke-width="3.5" stroke-linecap="round"/>
+                <!-- Base -->
+                <line x1="28" y1="115" x2="62" y2="115" stroke="#2d6a4f" stroke-width="3.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+          <!-- Soundwave -->
+          <div class="hero__soundwave" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M7 2v10M3 8l4 4 4-4" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ── ABOUT / MISSION ────────────────────────────────── -->
+  <section class="section" id="about" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="mission">
+
+        <div class="mission__text reveal">
+          <span class="label">The Mission</span>
+          <h2 id="about-heading">
+            Close the gap between where you are and where you want to be
+          </h2>
+          <p>
+            Most founder content points up at people 10 steps ahead. SoundMud points
+            sideways — at people who just solved what you're stuck on right now.
+          </p>
+          <p>
+            Practical conversations about the actual workstreams. The automation stack.
+            The AI decisions. The trade-offs nobody talks about on a conference stage.
+          </p>
+          <p>
+            UK-based, founder-focused, and built with sustainability as a design
+            principle — not an afterthought.
+          </p>
+          <blockquote class="mission__quote">
+            "Does this move us forward, and does it leave something better than we found it?"
+          </blockquote>
+        </div>
+
+        <div class="pillars reveal" style="transition-delay: 0.1s">
+          <div class="pillar">
+            <div class="pillar__icon" aria-hidden="true">→</div>
+            <h3>One step ahead</h3>
+            <p>Guests who solved last month what you're solving today — not keynote
+               speakers recalling decisions from a decade ago.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar__icon" aria-hidden="true">⟳</div>
+            <h3>Circular by design</h3>
+            <p>Listener voices feed back into content. Repeat guests build on earlier
+               conversations. Knowledge moves in all directions.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar__icon" aria-hidden="true">◉</div>
+            <h3>Built sustainably</h3>
+            <p>Sustainability isn't a badge here. It's a constraint we design around —
+               from how we record to who we partner with.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EPISODES ───────────────────────────────────────── -->
+  <section class="section section--alt" id="episodes" aria-labelledby="episodes-heading">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="label">Episodes</span>
+        <h2 id="episodes-heading">Latest conversations</h2>
+        <p>Honest. Practical. No glamour — just the stuff that actually builds a business.</p>
+      </div>
+
+      <div class="episodes__grid">
+
+        <!-- Coming Soon card — remove once Episode 1 is live -->
+        <article class="episode-card episode-card--coming reveal">
+          <div class="episode-card__number">EP. 00</div>
+          <div class="episode-card__body">
+            <span class="episode-card__badge">Coming Soon</span>
+            <h3 class="episode-card__title">
+              The first conversation is being recorded
+            </h3>
+            <p class="episode-card__desc">
+              We're building in the open. Subscribe to be notified the moment
+              Episode 1 drops.
+            </p>
+          </div>
+          <div class="episode-card__meta">
+            <span>Stay tuned</span>
+            <a href="#newsletter" class="btn btn--outline btn--sm">Get notified</a>
+          </div>
+        </article>
+
+        <!--
+          ADD FUTURE EPISODES HERE. Copy and paste one of the blocks below,
+          remove the --coming modifier and Coming Soon badge, and fill in the details.
+
+          <article class="episode-card reveal">
+            <div class="episode-card__number">EP. 01</div>
+            <div class="episode-card__body">
+              <span class="episode-card__badge">45 min · 12 Jun 2025</span>
+              <h3 class="episode-card__title">Episode Title Here</h3>
+              <p class="episode-card__desc">
+                A short description of what this episode covers and why it matters.
+              </p>
+            </div>
+            <div class="episode-card__meta">
+              <span>45 min</span>
+              <a href="EPISODE_URL" class="btn btn--green btn--sm" target="_blank" rel="noopener">
+                Listen
+              </a>
+            </div>
+          </article>
+        -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SUSTAINABILITY TEASER ──────────────────────────── -->
+  <section class="section section--green" id="sustainability-teaser"
+           aria-labelledby="sustain-heading">
+    <div class="container">
+      <div class="sustain-teaser">
+
+        <div class="sustain-teaser__content reveal">
+          <span class="label label--light">Sustainability</span>
+          <h2 id="sustain-heading">Building something that gives back</h2>
+          <p>
+            Every episode tracked. A tree planted for every 100 subscribers. CO&#8322;
+            transparency built into the platform. Sustainability isn't a marketing line
+            for SoundMud — it's a design constraint we work within from the start.
+          </p>
+          <a href="sustainability.html" class="btn btn--outline-light">
+            See our commitments &#8594;
+          </a>
+        </div>
+
+        <div class="sustain-teaser__stats reveal" style="transition-delay: 0.1s"
+             aria-label="Live impact numbers">
+          <div class="stat">
+            <span class="stat__number" data-counter="treesPlanted">0</span>
+            <span class="stat__label">Trees planted</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number" data-counter="episodesRecorded">0</span>
+            <span class="stat__label">Episodes recorded</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number" data-counter="kgCO2">0</span>
+            <span class="stat__label">kg CO&#8322; offset</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LISTEN / PLATFORMS ─────────────────────────────── -->
+  <section class="section" id="listen" aria-labelledby="listen-heading">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="label">Listen</span>
+        <h2 id="listen-heading">Wherever you get your podcasts</h2>
+        <p>SoundMud is available on all major platforms. Links below will update when the first episode drops.</p>
+      </div>
+
+      <div class="platforms reveal">
+        <!-- Replace href="#" with your real podcast URLs once the show is live -->
+        <a href="#" class="platform platform--spotify"
+           aria-label="Listen on Spotify" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor"
+              d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+          </svg>
+          <span>Spotify</span>
+        </a>
+
+        <a href="#" class="platform platform--apple"
+           aria-label="Listen on Apple Podcasts" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor"
+              d="M12.018 0C5.338 0 .036 5.28.036 11.982c0 5.224 3.336 9.687 8.022 11.326.016-.908.016-1.96.016-2.868-.84.184-1.62.184-2.028-.48-.48-.78-.624-1.98-1.116-2.412-.384-.336-.972-.408-.972-.408s.996-.144 1.548.84c.552.996.552 1.56 1.14 1.716.588.156 1.296-.06 1.68-.24.072-.54.288-1.008.624-1.368-2.532-.456-3.576-2.196-3.576-4.272 0-.948.312-1.824.828-2.532-.168-.456-.36-1.404.036-2.52 0 0 .696-.216 2.28.84.648-.18 1.356-.276 2.04-.276s1.392.096 2.04.276c1.584-1.068 2.28-.84 2.28-.84.396 1.116.204 2.064.036 2.52.516.708.828 1.584.828 2.532 0 2.076-1.044 3.816-3.576 4.272.492.528.792 1.248.792 2.124v3.156c4.68-1.644 8.016-6.108 8.016-11.328C23.976 5.28 18.69 0 12.018 0z"/>
+          </svg>
+          <span>Apple Podcasts</span>
+        </a>
+
+        <a href="#" class="platform platform--youtube"
+           aria-label="Watch on YouTube" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor"
+              d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          <span>YouTube</span>
+        </a>
+
+        <a href="#" class="platform" aria-label="Subscribe via RSS" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor"
+              d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19.01 7.38 20 6.18 20C4.98 20 4 19.01 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z"/>
+          </svg>
+          <span>RSS Feed</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── NEWSLETTER ─────────────────────────────────────── -->
+  <section class="section section--alt" id="newsletter" aria-labelledby="newsletter-heading">
+    <div class="container container--narrow">
+      <div class="section__header reveal">
+        <span class="label">Stay in the loop</span>
+        <h2 id="newsletter-heading">Build alongside us</h2>
+        <p>
+          New episodes, behind-the-scenes on building the show, and our sustainability
+          updates. No noise. No spam. Unsubscribe any time.
+        </p>
+      </div>
+
+      <form class="newsletter-form reveal" id="newsletterForm"
+            aria-label="Email newsletter signup" style="transition-delay: 0.1s">
+        <div class="newsletter-form__fields">
+          <label for="emailInput" class="visually-hidden">Your email address</label>
+          <input
+            type="email"
+            id="emailInput"
+            name="email"
+            placeholder="your@email.com"
+            required
+            autocomplete="email"
+            class="input"
+          >
+          <button type="submit" class="btn btn--green">Subscribe</button>
+        </div>
+        <p class="newsletter-form__note">
+          UK-based founders talking to UK-based founders. That's the audience.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <span class="footer__logo" aria-label="SoundMud">SOUNDMUD</span>
+          <p class="footer__tagline">Think further. Build better.</p>
+        </div>
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <a href="#about">About</a>
+          <a href="#episodes">Episodes</a>
+          <a href="sustainability.html">Sustainability</a>
+          <a href="#newsletter">Newsletter</a>
+        </nav>
+        <div class="footer__social" aria-label="Social links">
+          <!-- Replace # with your actual social profile URLs -->
+          <a href="#" aria-label="SoundMud on X (Twitter)" rel="noopener">X</a>
+          <a href="#" aria-label="SoundMud on LinkedIn" rel="noopener">LinkedIn</a>
+          <a href="#" aria-label="SoundMud on Instagram" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 SoundMud. Built with intention.</p>
+        <a href="sustainability.html" class="footer__sustain-badge">
+          &#127807; Carbon-conscious podcast
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Visually-hidden helper (accessibility) -->
+  <style>
+    .visually-hidden {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+  </style>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
