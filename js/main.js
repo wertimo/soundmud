@@ -116,35 +116,67 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 })();
 
 /* ── Counter animation ───────────────────────────────────── */
-function animateCounter(el, from, to, duration) {
+function animateCounter(el, from, to, duration, decimals) {
   const startTime = performance.now();
   const update = now => {
-    const p = Math.min((now - startTime) / duration, 1);
-    const eased = 1 - Math.pow(1 - p, 3); // ease-out cubic
-    el.textContent = Math.round(from + (to - from) * eased);
+    const p      = Math.min((now - startTime) / duration, 1);
+    const eased  = 1 - Math.pow(1 - p, 3);
+    const val    = from + (to - from) * eased;
+    el.textContent = decimals ? val.toFixed(decimals) : Math.round(val);
     if (p < 1) requestAnimationFrame(update);
   };
   requestAnimationFrame(update);
 }
 
-/* Live stats — update these numbers as the show grows */
-const STATS = {
-  treesPlanted:     0,
-  episodesRecorded: 0,
-  kgCO2:            0,
-};
+/* Live stats — auto-populated from RSS feed */
+const STATS = { treesPlanted: 0, episodesRecorded: 0, kgCO2: 0 };
+
+/* kg CO₂ per minute of audio (recording + editing + hosting estimate) */
+const CO2_KG_PER_MIN = 0.01;
+
+function parseDurationSecs(str) {
+  const p = (str || '0').trim().split(':').map(Number);
+  if (p.length === 3) return p[0] * 3600 + p[1] * 60 + p[2];
+  if (p.length === 2) return p[0] * 60  + p[1];
+  return Number(p[0]) || 0;
+}
+
+function parseRSSText(text) {
+  const xml   = new DOMParser().parseFromString(text, 'text/xml');
+  const items = [...xml.querySelectorAll('item')];
+  let totalSecs = 0;
+  items.forEach(item => {
+    const dur = item.querySelector('duration')?.textContent;
+    totalSecs += parseDurationSecs(dur);
+  });
+  STATS.episodesRecorded = items.length;
+  STATS.kgCO2 = parseFloat(((totalSecs / 60) * CO2_KG_PER_MIN).toFixed(1));
+}
+
+const RSS_URL   = 'https://anchor.fm/s/11300ebf0/podcast/rss';
+const PROXY_URL = 'https://api.allorigins.win/raw?url=';
+
+const statsReady = fetch(RSS_URL)
+  .then(r => { if (!r.ok) throw new Error(); return r.text(); })
+  .then(parseRSSText)
+  .catch(() =>
+    fetch(PROXY_URL + encodeURIComponent(RSS_URL))
+      .then(r => r.text())
+      .then(parseRSSText)
+      .catch(() => {})
+  );
 
 (function initCounters() {
   const counters = document.querySelectorAll('[data-counter]');
   if (!counters.length) return;
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        const key    = e.target.dataset.counter;
-        const target = STATS[key] ?? 0;
-        animateCounter(e.target, 0, target, 1600);
-        obs.unobserve(e.target);
-      }
+      if (!e.isIntersecting) return;
+      obs.unobserve(e.target);
+      const el       = e.target;
+      const key      = el.dataset.counter;
+      const decimals = parseInt(el.dataset.decimals || '0', 10);
+      statsReady.then(() => animateCounter(el, 0, STATS[key] ?? 0, 1600, decimals));
     });
   }, { threshold: 0.5 });
   counters.forEach(el => obs.observe(el));
