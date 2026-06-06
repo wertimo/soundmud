@@ -48,10 +48,8 @@
 
   <!-- ── HERO ───────────────────────────────────────────── -->
   <section class="hero" id="home" aria-labelledby="hero-headline">
-    <div class="hero__bg" aria-hidden="true"></div>
-
     <div class="hero__inner">
-      <!-- Content -->
+
       <div class="hero__content">
         <p class="hero__kicker">A podcast for UK founders</p>
         <h1 class="hero__headline" id="hero-headline">
@@ -60,48 +58,21 @@
         <p class="hero__sub">
           Not the success stories from people 10 steps ahead. Honest, practical
           conversations with founders who just figured out the thing you're stuck on
-          right now the workstreams, the automation, the AI decisions.
+          right now — the workstreams, the automation, the AI decisions.
         </p>
         <div class="hero__actions">
-          <a href="#listen" class="btn btn--green btn--lg">Listen Now</a>
-          <a href="#newsletter" class="btn btn--outline btn--lg">Stay Updated</a>
+          <a href="#listen" class="btn btn--glass-green btn--lg">Listen Now</a>
+          <a href="#newsletter" class="btn btn--glass btn--lg">Stay Updated</a>
         </div>
         <p class="hero__goal">
           Goal: <strong>1,000 founders</strong> building alongside us.
         </p>
       </div>
 
-      <!-- Visual -->
       <div class="hero__visual" aria-hidden="true">
-        <div class="hero__vis-wrap">
-          <div class="hero__vis-circle">
-            <div class="hero__vis-mic">
-              <!-- Microphone SVG -->
-              <svg viewBox="0 0 90 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect x="22" y="6"  width="46" height="70" rx="23" fill="#2d6a4f" opacity="0.18"/>
-                <rect x="28" y="12" width="34" height="58" rx="17" fill="#2d6a4f" opacity="0.32"/>
-                <rect x="35" y="20" width="20" height="42" rx="10" fill="#2d6a4f"/>
-                <!-- Grille lines -->
-                <line x1="35" y1="30" x2="55" y2="30" stroke="#d8f3dc" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-                <line x1="35" y1="38" x2="55" y2="38" stroke="#d8f3dc" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-                <line x1="35" y1="46" x2="55" y2="46" stroke="#d8f3dc" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-                <!-- Stand arc -->
-                <path d="M12 64 C12 92 78 92 78 64" stroke="#2d6a4f" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-                <!-- Pole -->
-                <line x1="45" y1="92" x2="45" y2="115" stroke="#2d6a4f" stroke-width="3.5" stroke-linecap="round"/>
-                <!-- Base -->
-                <line x1="28" y1="115" x2="62" y2="115" stroke="#2d6a4f" stroke-width="3.5" stroke-linecap="round"/>
-              </svg>
-            </div>
-          </div>
-          <!-- Soundwave -->
-          <div class="hero__soundwave" aria-hidden="true">
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span>
-          </div>
-        </div>
+        <canvas id="pixelCanvas" class="hero__pixel-canvas" width="160" height="90"></canvas>
       </div>
+
     </div>
 
     <div class="hero__scroll" aria-hidden="true">
@@ -373,15 +344,7 @@
     </div>
   </footer>
 
-  <!-- Visually-hidden helper (accessibility) -->
-  <style>
-    .visually-hidden {
-      position: absolute; width: 1px; height: 1px;
-      padding: 0; margin: -1px; overflow: hidden;
-      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
-    }
-  </style>
-
+  <script src="js/pixel-art.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

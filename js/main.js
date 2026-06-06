@@ -2,12 +2,67 @@
    SOUNDMUD — main.js
    ============================================================ */
 
-/* ── Nav: scroll shadow ──────────────────────────────────── */
+/* ── Nav: scroll shadow + hero transparency ─────────────── */
 const nav = document.getElementById('nav');
 if (nav) {
+  const hero = document.getElementById('home');
+
   const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 16);
   window.addEventListener('scroll', onScroll, { passive: true });
+
+  const darkHero = hero || document.querySelector('.sustain-hero');
+  if (darkHero) {
+    const updateHeroNav = () => {
+      nav.classList.toggle('nav--over-hero', window.scrollY < darkHero.offsetHeight - 80);
+    };
+    window.addEventListener('scroll', updateHeroNav, { passive: true });
+    updateHeroNav();
+  }
 }
+
+/* ── Hero headline: per-character stagger animation ─────── */
+(function initCharAnimation() {
+  const el = document.querySelector('.hero__headline');
+  if (!el) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    el.classList.add('chars-animated');
+    return;
+  }
+
+  const nodes = [...el.childNodes];
+  el.innerHTML = '';
+  let idx = 0;
+
+  nodes.forEach(node => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      const words = node.textContent.trim().split(/\s+/);
+      words.forEach((word, wi) => {
+        if (wi > 0) {
+          const sp = document.createTextNode(' ');
+          el.appendChild(sp);
+        }
+        const wordWrap = document.createElement('span');
+        wordWrap.style.cssText = 'display:inline-block;white-space:nowrap';
+        [...word].forEach(char => {
+          const span = document.createElement('span');
+          span.className = 'char';
+          span.style.setProperty('--char-delay', `${0.35 + idx * 0.038}s`);
+          span.textContent = char;
+          wordWrap.appendChild(span);
+          idx++;
+        });
+        el.appendChild(wordWrap);
+      });
+    } else if (node.nodeName === 'BR') {
+      el.appendChild(document.createElement('br'));
+      idx += 3;
+    }
+  });
+
+  requestAnimationFrame(() =>
+    requestAnimationFrame(() => el.classList.add('chars-animated'))
+  );
+})();
 
 /* ── Nav: mobile toggle ──────────────────────────────────── */
 const navToggle = document.getElementById('navToggle');
