@@ -129,4 +129,4 @@ and replace with your real profile URLs.
 
 ---
 
-*Think further. Build better.*
+*Where founders get real.*
